@@ -1,0 +1,16 @@
+[
+	{
+	  "modid": "{modId}",
+	  "name": "{modName}",
+	  "description": "Collection of books for Blightfall",
+	  "version": "${modVersion}",
+	  "mcversion": "${minecraftVersion}",
+	  "url": "https://github.com/Midnight145/blightbuster",
+	  "updateUrl": "",
+	  "authorList": ["Talonos", "Icedice", "CannibalVox", "Midnight"],
+	  "credits": "",
+	  "logoFile": "",
+	  "screenshots": [],
+	  "dependencies": []
+	}
+]
