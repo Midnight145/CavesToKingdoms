@@ -48,83 +48,31 @@ public class ManualInfo {
     public ManualInfo() {
         this.readManuals();
         Document d = this.mats0Doc;
-        this.initManual(
-            this.mats0,
-            "basicManual.0",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats0, "basicManual.0", d, "tinker:tinkerbook_diary");
         d = this.mats1Doc;
-        this.initManual(
-            this.mats1,
-            "basicManual.1",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats1, "basicManual.1", d, "tinker:tinkerbook_diary");
         d = this.mats2Doc;
-        this.initManual(
-            this.mats2,
-            "basicManual.2",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats2, "basicManual.2", d, "tinker:tinkerbook_diary");
         d = this.mats3Doc;
-        this.initManual(
-            this.mats3,
-            "basicManual.3",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats3, "basicManual.3", d, "tinker:tinkerbook_diary");
         d = this.mats4Doc;
-        this.initManual(
-            this.mats4,
-            "basicManual.4",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats4, "basicManual.4", d, "tinker:tinkerbook_diary");
         d = this.mats5doc;
-        this.initManual(
-            this.mats5,
-            "basicManual.5",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats5, "basicManual.5", d, "tinker:tinkerbook_diary");
         d = this.ben1doc;
-        this.initManual(
-            this.ben1,
-            "basicManual.6",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.ben1, "basicManual.6", d, "tinker:tinkerbook_diary");
         d = this.ben2doc;
-        this.initManual(
-            this.ben2,
-            "basicManual.7",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.ben2, "basicManual.7", d, "tinker:tinkerbook_diary");
         d = this.ben3doc;
-        this.initManual(
-            this.ben3,
-            "basicManual.8",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.ben3, "basicManual.8", d, "tinker:tinkerbook_diary");
         d = this.ben4doc;
-        this.initManual(
-            this.ben4,
-            "basicManual.9",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.ben4, "basicManual.9", d, "tinker:tinkerbook_diary");
         d = this.sarah1Doc;
-        this.initManual(
-            this.sarah1,
-            "basicManual.12",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.sarah1, "basicManual.12", d, "tinker:tinkerbook_diary");
         d = this.sarah2Doc;
-        this.initManual(
-            this.sarah2,
-            "basicManual.13",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.sarah2, "basicManual.13", d, "tinker:tinkerbook_diary");
         d = this.darkDoc;
-        this.initManual(
-            this.dark,
-            "basicManual.14",
-                d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.dark, "basicManual.14", d, "tinker:tinkerbook_diary");
     }
 
     public void initManual(BookData data, String unlocName, Document xmlDoc, String itemImage) {

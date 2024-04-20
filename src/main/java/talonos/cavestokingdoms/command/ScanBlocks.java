@@ -19,6 +19,7 @@ import org.apache.commons.io.FileUtils;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
+import talonos.cavestokingdoms.CavesToKingdoms;
 
 public class ScanBlocks extends CommandBase {
 
@@ -35,16 +36,16 @@ public class ScanBlocks extends CommandBase {
     @Override
     public void processCommand(ICommandSender p_71515_1_, String[] p_71515_2_) {
         p_71515_1_.addChatMessage(new ChatComponentText("Beginning Scan"));
-        CommandBlockScanner scanner = new CommandBlockScanner(p_71515_1_);
+        new CommandBlockScanner(p_71515_1_);
     }
 
-    public class CommandBlockScanner {
+    public static class CommandBlockScanner {
 
-        private ICommandSender commandSender;
+        private final ICommandSender commandSender;
         private int x = 0;
         private int z = 0;
         private double total = 0;
-        private HashMap<String, Integer> blockData = new HashMap<String, Integer>();
+        private final HashMap<String, Integer> blockData = new HashMap<>();
 
         public CommandBlockScanner(ICommandSender commandSender) {
             this.commandSender = commandSender;
@@ -108,23 +109,18 @@ public class ScanBlocks extends CommandBase {
                 FileOutputStream streamOut = FileUtils.openOutputStream(new File("scanOut.csv"));
 
                 OutputStreamWriter writer = new OutputStreamWriter(streamOut);
-                writer.write("block,count,percent" + System.getProperty("line.separator"));
+                writer.write("block,count,percent" + System.lineSeparator());
                 for (String key : blockData.keySet()) {
                     int count = blockData.get(key);
 
                     double percent = ((double) count / total) * 100.0;
-                    writer.write(
-                        key + ","
-                            + Integer.toString(count)
-                            + ","
-                            + Double.toString(percent)
-                            + System.getProperty("line.separator"));
+                    writer.write(key + "," + count + "," + percent + System.lineSeparator());
                 }
 
                 writer.close();
                 streamOut.close();
             } catch (IOException ex) {
-                ex.printStackTrace();
+                CavesToKingdoms.logger.error("Failed to write scan data", ex);
             }
             FMLCommonHandler.instance()
                 .bus()

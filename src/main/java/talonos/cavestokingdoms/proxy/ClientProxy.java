@@ -19,7 +19,7 @@ import talonos.cavestokingdoms.client.pages.ExtMaterialsUsagePage;
 
 public class ClientProxy extends CommonProxy {
 
-    private Field manualItemStack = null;
+    private final Field manualItemStack;
 
     public ClientProxy() {
         try {
