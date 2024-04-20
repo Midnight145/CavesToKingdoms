@@ -1,8 +1,6 @@
 package talonos.cavestokingdoms.command;
 
-import java.util.List;
-
-import net.minecraft.command.ICommand;
+import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -12,7 +10,7 @@ import talonos.cavestokingdoms.client.pages.orediscovery.OreDiscoveryRegistry;
 import talonos.cavestokingdoms.network.CavesToKingdomsNetwork;
 import talonos.cavestokingdoms.network.packets.WipeDiscoveryProgressPacket;
 
-public class WipeDiscoveryProgress implements ICommand {
+public class WipeDiscoveryProgress extends CommandBase {
 
     @Override
     public String getCommandName() {
@@ -20,45 +18,20 @@ public class WipeDiscoveryProgress implements ICommand {
     }
 
     @Override
-    public String getCommandUsage(ICommandSender sender) {
+    public String getCommandUsage(ICommandSender p_71518_1_) {
         return "/oreDiscoveryWipe";
     }
 
     @Override
-    public List<String> getCommandAliases() {
-        return null;
-    }
-
-    @Override
-    public void processCommand(ICommandSender sender, String[] args) {
-        if (sender instanceof EntityPlayer) {
+    public void processCommand(ICommandSender p_71515_1_, String[] p_71515_2_) {
+        if (p_71515_1_ instanceof EntityPlayer) {
             OreDiscoveryRegistry.getInstance()
-                .clearDiscoveries(((EntityPlayer) sender).getEntityData());
-            sender.addChatMessage(new ChatComponentTranslation("gui.oreDiscovery.wiped"));
-            if (sender instanceof EntityPlayerMP)
-                CavesToKingdomsNetwork.sendToPlayer(new WipeDiscoveryProgressPacket(), (EntityPlayerMP) sender);
+                .clearDiscoveries(((EntityPlayer) p_71515_1_).getEntityData());
+            p_71515_1_.addChatMessage(new ChatComponentTranslation("gui.oreDiscovery.wiped"));
+            if (p_71515_1_ instanceof EntityPlayerMP)
+                CavesToKingdomsNetwork.sendToPlayer(new WipeDiscoveryProgressPacket(), (EntityPlayerMP) p_71515_1_);
         } else {
-            sender.addChatMessage(new ChatComponentTranslation("gui.oreDiscovery.notPlayer"));
+            p_71515_1_.addChatMessage(new ChatComponentTranslation("gui.oreDiscovery.notPlayer"));
         }
-    }
-
-    @Override
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
-        return false;
-    }
-
-    @Override
-    public List<String> addTabCompletionOptions(ICommandSender sender, String[] args) {
-        return null;
-    }
-
-    @Override
-    public boolean isUsernameIndex(String[] args, int index) {
-        return false;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
     }
 }

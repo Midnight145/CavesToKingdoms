@@ -26,4 +26,5 @@ public class CtKBlock extends Block {
         altarBlock = new AltarBlock();
         spiritStoneBlock = new SpiritStoneBlock();
     }
+
 }

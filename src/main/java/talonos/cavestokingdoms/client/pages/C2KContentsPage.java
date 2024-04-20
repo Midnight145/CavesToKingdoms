@@ -57,11 +57,8 @@ public class C2KContentsPage extends BookPage {
     public void renderContentLayer(int localWidth, int localHeight, boolean isTranslatable) {
         if (text != null) {
             if (isTranslatable) text = StatCollector.translateToLocal(text);
-            manual.fonts.drawString(
-                "\u00a7n" + text,
-                localWidth + 25 + manual.fonts.getStringWidth(text) / 2,
-                localHeight + 4,
-                0);
+            manual.fonts
+                .drawString("§n" + text, localWidth + 25 + manual.fonts.getStringWidth(text) / 2, localHeight + 4, 0);
         }
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         RenderHelper.enableGUIStandardItemLighting();

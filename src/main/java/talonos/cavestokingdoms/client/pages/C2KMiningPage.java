@@ -198,7 +198,7 @@ public class C2KMiningPage extends OreDiscoveryPage {
         String between = StatCollector.translateToLocal("manual.cavestokingdoms.between");
         String and = StatCollector.translateToLocal("manual.cavestokingdoms.and");
 
-        manual.fonts.drawString("\u00a7n" + title, localWidth + 70, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + title, localWidth + 70, localHeight + 4, 0);
 
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         RenderHelper.enableGUIStandardItemLighting();
@@ -232,10 +232,9 @@ public class C2KMiningPage extends OreDiscoveryPage {
             localHeight + 35,
             100,
             0);
-        manual.fonts
-            .drawSplitString("\u00a7l" + biome + ": \u00a7r" + whereFound, localWidth, localHeight + 60, 106, 0);
+        manual.fonts.drawSplitString("§l" + biome + ": §r" + whereFound, localWidth, localHeight + 60, 106, 0);
         manual.fonts.drawSplitString(
-            "\u00a7l" + height + ": \u00a7r" + between + " " + minheight + " " + and + " " + maxheight + ".",
+            "§l" + height + ": §r" + between + " " + minheight + " " + and + " " + maxheight + ".",
             localWidth,
             localHeight + 105,
             100,
@@ -252,8 +251,7 @@ public class C2KMiningPage extends OreDiscoveryPage {
         String suchAs = StatCollector.translateToLocal("manual.cavestokingdoms.suchas");
         String required = StatCollector.translateToLocal("discover.cavestokingdoms.harvestlevel" + requiredLevel);
 
-        manual.fonts
-            .drawString("\u00a7n" + entryOn + " " + title + " " + isLocked, localWidth + 28, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + entryOn + " " + title + " " + isLocked, localWidth + 28, localHeight + 4, 0);
         manual.fonts.drawString(toUnlock + " ", localWidth + 50, localHeight + 18, 0);
         manual.fonts.drawString(
             required + " " + suchAs,

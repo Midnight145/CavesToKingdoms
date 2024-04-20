@@ -5,8 +5,8 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictionaryDiscoveryEntry implements IDiscoveryEntry {
 
-    private int oreId;
-    private String discoveredOreData;
+    private final int oreId;
+    private final String discoveredOreData;
 
     public OreDictionaryDiscoveryEntry(String oreDictionaryEntry, String discoveredOreData) {
         this.oreId = OreDictionary.getOreID(oreDictionaryEntry);

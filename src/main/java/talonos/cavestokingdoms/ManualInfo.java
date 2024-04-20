@@ -6,12 +6,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.StatCollector;
 
 import org.w3c.dom.Document;
 
-import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.relauncher.Side;
 import mantle.books.BookData;
 import mantle.books.BookDataStore;
 import talonos.cavestokingdoms.lib.DEFS;
@@ -44,132 +41,47 @@ public class ManualInfo {
     private Document ben2doc;
     private Document ben3doc;
     private Document ben4doc;
-    private Document taint1Doc;
-    private Document taint2Doc;
     private Document sarah1Doc;
     private Document sarah2Doc;
     private Document darkDoc;
 
     public ManualInfo() {
         this.readManuals();
-        Side side = FMLCommonHandler.instance()
-            .getEffectiveSide();
         Document d = this.mats0Doc;
-        this.initManual(
-            this.mats0,
-            "basicManual.0",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats0, "basicManual.0", d, "tinker:tinkerbook_diary");
         d = this.mats1Doc;
-        this.initManual(
-            this.mats1,
-            "basicManual.1",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats1, "basicManual.1", d, "tinker:tinkerbook_diary");
         d = this.mats2Doc;
-        this.initManual(
-            this.mats2,
-            "basicManual.2",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats2, "basicManual.2", d, "tinker:tinkerbook_diary");
         d = this.mats3Doc;
-        this.initManual(
-            this.mats3,
-            "basicManual.3",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats3, "basicManual.3", d, "tinker:tinkerbook_diary");
         d = this.mats4Doc;
-        this.initManual(
-            this.mats4,
-            "basicManual.4",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats4, "basicManual.4", d, "tinker:tinkerbook_diary");
         d = this.mats5doc;
-        this.initManual(
-            this.mats5,
-            "basicManual.5",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.mats5, "basicManual.5", d, "tinker:tinkerbook_diary");
         d = this.ben1doc;
-        this.initManual(
-            this.ben1,
-            "basicManual.6",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.ben1, "basicManual.6", d, "tinker:tinkerbook_diary");
         d = this.ben2doc;
-        this.initManual(
-            this.ben2,
-            "basicManual.7",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.ben2, "basicManual.7", d, "tinker:tinkerbook_diary");
         d = this.ben3doc;
-        this.initManual(
-            this.ben3,
-            "basicManual.8",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.ben3, "basicManual.8", d, "tinker:tinkerbook_diary");
         d = this.ben4doc;
-        this.initManual(
-            this.ben4,
-            "basicManual.9",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
-        d = this.taint1Doc;
-        this.initManual(
-            this.taint1,
-            "basicManual.10",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
-        d = this.taint2Doc;
-        this.initManual(
-            this.taint2,
-            "basicManual.11",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.ben4, "basicManual.9", d, "tinker:tinkerbook_diary");
         d = this.sarah1Doc;
-        this.initManual(
-            this.sarah1,
-            "basicManual.12",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.sarah1, "basicManual.12", d, "tinker:tinkerbook_diary");
         d = this.sarah2Doc;
-        this.initManual(
-            this.sarah2,
-            "basicManual.13",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.sarah2, "basicManual.13", d, "tinker:tinkerbook_diary");
         d = this.darkDoc;
-        this.initManual(
-            this.dark,
-            "basicManual.14",
-            "\u00a7o" + StatCollector.translateToLocal("manual1.tooltip"),
-            d,
-            "tinker:tinkerbook_diary");
+        this.initManual(this.dark, "basicManual.14", d, "tinker:tinkerbook_diary");
     }
 
-    public BookData initManual(BookData data, String unlocName, String toolTip, Document xmlDoc, String itemImage) {
-        // proxy.readManuals();
+    public void initManual(BookData data, String unlocName, Document xmlDoc, String itemImage) {
         data.unlocalizedName = unlocName;
         data.toolTip = unlocName;
         data.modID = "item." + DEFS.MODID;
         data.itemImage = new ResourceLocation(data.modID, itemImage);
         data.doc = xmlDoc;
         BookDataStore.addBook(data);
-        return data;
     }
 
     public void readManuals() {
@@ -199,7 +111,7 @@ public class ManualInfo {
 
             return doc;
         } catch (Exception e) {
-            e.printStackTrace();
+            CavesToKingdoms.logger.error("Error reading manual: {}", e);
             return null;
         }
     }

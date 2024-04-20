@@ -1,5 +1,8 @@
 package talonos.cavestokingdoms;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -14,7 +17,7 @@ import talonos.cavestokingdoms.command.ScanBlocks;
 import talonos.cavestokingdoms.command.WipeDiscoveryProgress;
 import talonos.cavestokingdoms.lib.DEFS;
 import talonos.cavestokingdoms.network.CavesToKingdomsNetwork;
-import talonos.cavestokingdoms.proxies.CommonProxy;
+import talonos.cavestokingdoms.proxy.CommonProxy;
 
 @Mod(modid = DEFS.MODID, name = DEFS.MODNAME, version = DEFS.VERSION, dependencies = DEFS.DEPS)
 public class CavesToKingdoms {
@@ -26,6 +29,8 @@ public class CavesToKingdoms {
 
     public static ManualInfo manualInfo;
 
+    public static Logger logger = LogManager.getLogger(DEFS.MODID);
+
     @Mod.EventHandler
     public static void preInit(FMLPreInitializationEvent event) {
         CtKBlock.init();
@@ -36,6 +41,7 @@ public class CavesToKingdoms {
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event) {
         CavesToKingdomsNetwork.init();
+
         manualInfo = new ManualInfo();
     }
 

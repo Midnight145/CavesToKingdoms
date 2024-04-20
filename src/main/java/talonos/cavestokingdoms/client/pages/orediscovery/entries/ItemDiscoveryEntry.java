@@ -5,10 +5,10 @@ import net.minecraft.item.ItemStack;
 
 public class ItemDiscoveryEntry implements IDiscoveryEntry {
 
-    private Item discoveryItem;
-    private int discoveryMeta;
-    private int discoveryMetaFlags;
-    private String discoveredOreData;
+    private final Item discoveryItem;
+    private final int discoveryMeta;
+    private final int discoveryMetaFlags;
+    private final String discoveredOreData;
 
     public ItemDiscoveryEntry(Item item, int meta, int metaFlags, String oreData) {
         this.discoveryItem = item;

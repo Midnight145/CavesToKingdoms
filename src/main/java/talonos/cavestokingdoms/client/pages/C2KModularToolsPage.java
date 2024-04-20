@@ -63,8 +63,8 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
             nodes = element.getElementsByTagName(nodeToGet);
             if (nodes.item(0) != null && nodes.item(0)
                 .getTextContent() != null) // who knows what
-                                           // could go wrong?
-                                           // :/
+            // could go wrong?
+            // :/
             {
                 String total = nodes.item(0)
                     .getTextContent();
@@ -121,7 +121,7 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
         String extraMod = StatCollector.translateToLocal("manual.cavestokingdoms.extramod");
         String normal = StatCollector.translateToLocal("manual.cavestokingdoms.normal");
 
-        manual.fonts.drawString("\u00a7n" + title, localWidth + 70, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + title, localWidth + 70, localHeight + 4, 0);
         manual.fonts.drawSplitString(description, localWidth, localHeight + 16, 178, 0);
 
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
@@ -150,7 +150,7 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
                     + material.harvestLevel()
                     + " ("
                     + HarvestLevels.getHarvestLevelName(material.harvestLevel())
-                    + "\u00a70)",
+                    + "§0)",
                 localWidth,
                 localHeight + 60,
                 0);
@@ -160,7 +160,7 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
             manual.fonts.drawString(miningSpeed + ": " + material.toolSpeed() / 100f, localWidth, localHeight + 90, 0);
             int attack = material.attack();
             String heart = (attack == 2 ? " " + heart_ : " " + hearts); // What attention to detail! Thanks,
-                                                                        // Slimeknights!
+            // Slimeknights!
             if (attack % 2 == 0) {
                 manual.fonts
                     .drawString(baseAttack + ": " + material.attack() / 2 + heart, localWidth, localHeight + 100, 0);
@@ -194,7 +194,7 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
         String pleasetouch = StatCollector.translateToLocal("manual.cavestokingdoms.pleasetouch");
         String tounlock = StatCollector.translateToLocal("manual.cavestokingdoms.tounlock");
 
-        manual.fonts.drawString("\u00a7n" + undiscovered, localWidth + 14, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + undiscovered, localWidth + 14, localHeight + 4, 0);
         manual.fonts.drawString(pleasetouch, localWidth + 18, localHeight + 21, 0);
         manual.fonts.drawString(tounlock, localWidth + 60, localHeight + 32, 0);
 

@@ -16,6 +16,7 @@ import org.w3c.dom.NodeList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import iguanaman.iguanatweakstconstruct.override.XPAdjustmentMap;
+import talonos.cavestokingdoms.CavesToKingdoms;
 import talonos.cavestokingdoms.client.pages.orediscovery.OreDiscoveryPage;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.tools.ArrowMaterial;
@@ -138,8 +139,7 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
 
             }
         } catch (Exception e) {
-            System.out.println("An exception: ");
-            e.printStackTrace();
+            CavesToKingdoms.logger.error("Error while reading page from XML: {}", e);
         }
     }
 
@@ -166,7 +166,7 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
         String hearts = "Hearts";
 
         if (materials[i] != null) {
-            manual.fonts.drawString("\u00a7n" + matNames[i], localWidth + 45, localHeight + 4, 0);
+            manual.fonts.drawString("§n" + matNames[i], localWidth + 45, localHeight + 4, 0);
         }
 
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
@@ -237,7 +237,7 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
         String pleasetouch = StatCollector.translateToLocal("manual.cavestokingdoms.pleasetouch");
         String tounlock = StatCollector.translateToLocal("manual.cavestokingdoms.tounlock");
 
-        manual.fonts.drawString("\u00a7n" + undiscovered, localWidth + 14, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + undiscovered, localWidth + 14, localHeight + 4, 0);
         manual.fonts.drawString(pleasetouch, localWidth + 18, localHeight + 16, 0);
         manual.fonts.drawString(tounlock, localWidth + 60, localHeight + 26, 0);
 

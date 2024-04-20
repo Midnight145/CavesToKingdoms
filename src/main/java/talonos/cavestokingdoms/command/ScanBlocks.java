@@ -5,10 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.HashMap;
-import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.command.ICommand;
+import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,8 +19,9 @@ import org.apache.commons.io.FileUtils;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
+import talonos.cavestokingdoms.CavesToKingdoms;
 
-public class ScanBlocks implements ICommand {
+public class ScanBlocks extends CommandBase {
 
     @Override
     public String getCommandName() {
@@ -34,34 +34,9 @@ public class ScanBlocks implements ICommand {
     }
 
     @Override
-    public List<String> getCommandAliases() {
-        return null;
-    }
-
-    @Override
     public void processCommand(ICommandSender p_71515_1_, String[] p_71515_2_) {
         p_71515_1_.addChatMessage(new ChatComponentText("Beginning Scan"));
         new CommandBlockScanner(p_71515_1_);
-    }
-
-    @Override
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
-        return false;
-    }
-
-    @Override
-    public List<String> addTabCompletionOptions(ICommandSender sender, String[] args) {
-        return null;
-    }
-
-    @Override
-    public boolean isUsernameIndex(String[] args, int index) {
-        return false;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
     }
 
     public static class CommandBlockScanner {
@@ -145,7 +120,7 @@ public class ScanBlocks implements ICommand {
                 writer.close();
                 streamOut.close();
             } catch (IOException ex) {
-                ex.printStackTrace();
+                CavesToKingdoms.logger.error("Failed to write scan data", ex);
             }
             FMLCommonHandler.instance()
                 .bus()

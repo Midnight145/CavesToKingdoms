@@ -12,7 +12,6 @@ import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
 
 import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -41,8 +40,6 @@ public class ItemManual extends ItemOreManual {
     @SideOnly(Side.CLIENT)
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
         super.onItemRightClick(stack, world, player);
-        Side side = FMLCommonHandler.instance()
-            .getEffectiveSide();
         player.openGui(Mantle.instance, mantle.client.MProxyClient.manualGuiID, world, 0, 0, 0);
         FMLClientHandler.instance()
             .displayGuiScreen(player, new GuiManual(stack, this.getData(stack)));
@@ -50,40 +47,24 @@ public class ItemManual extends ItemOreManual {
     }
 
     private BookData getData(ItemStack stack) {
-        switch (stack.getItemDamage()) {
-            case 0:
-                return CavesToKingdoms.manualInfo.mats0;
-            case 1:
-                return CavesToKingdoms.manualInfo.mats1;
-            case 2:
-                return CavesToKingdoms.manualInfo.mats2;
-            case 3:
-                return CavesToKingdoms.manualInfo.mats3;
-            case 4:
-                return CavesToKingdoms.manualInfo.mats4;
-            case 5:
-                return CavesToKingdoms.manualInfo.mats5;
-            case 6:
-                return CavesToKingdoms.manualInfo.ben3;
-            case 7:
-                return CavesToKingdoms.manualInfo.ben4;
-            case 8:
-                return CavesToKingdoms.manualInfo.ben1;
-            case 9:
-                return CavesToKingdoms.manualInfo.ben2;
-            case 10:
-                return CavesToKingdoms.manualInfo.taint1;
-            case 11:
-                return CavesToKingdoms.manualInfo.taint2;
-            case 12:
-                return CavesToKingdoms.manualInfo.sarah1;
-            case 13:
-                return CavesToKingdoms.manualInfo.sarah2;
-            case 14:
-                return CavesToKingdoms.manualInfo.dark;
-            default:
-                return CavesToKingdoms.manualInfo.mats1;
-        }
+        return switch (stack.getItemDamage()) {
+            case 0 -> CavesToKingdoms.manualInfo.mats0;
+            case 1 -> CavesToKingdoms.manualInfo.mats1;
+            case 2 -> CavesToKingdoms.manualInfo.mats2;
+            case 3 -> CavesToKingdoms.manualInfo.mats3;
+            case 4 -> CavesToKingdoms.manualInfo.mats4;
+            case 5 -> CavesToKingdoms.manualInfo.mats5;
+            case 6 -> CavesToKingdoms.manualInfo.ben3;
+            case 7 -> CavesToKingdoms.manualInfo.ben4;
+            case 8 -> CavesToKingdoms.manualInfo.ben1;
+            case 9 -> CavesToKingdoms.manualInfo.ben2;
+            case 10 -> CavesToKingdoms.manualInfo.taint1;
+            case 11 -> CavesToKingdoms.manualInfo.taint2;
+            case 12 -> CavesToKingdoms.manualInfo.sarah1;
+            case 13 -> CavesToKingdoms.manualInfo.sarah2;
+            case 14 -> CavesToKingdoms.manualInfo.dark;
+            default -> CavesToKingdoms.manualInfo.mats1;
+        };
     }
 
     @Override
@@ -96,24 +77,24 @@ public class ItemManual extends ItemOreManual {
             case 3:
             case 4:
             case 5:
-                list.add("\u00a7o" + StatCollector.translateToLocal("blightfallmanual.geology"));
+                list.add("§o" + StatCollector.translateToLocal("blightfallmanual.geology"));
                 break;
             case 6:
             case 7:
             case 8:
             case 9:
-                list.add("\u00a7o" + StatCollector.translateToLocal("blightfallmanual.ben"));
+                list.add("§o" + StatCollector.translateToLocal("blightfallmanual.ben"));
                 break;
             case 10:
             case 11:
-                list.add("\u00a7o" + StatCollector.translateToLocal("blightfallmanual.taint"));
+                list.add("§o" + StatCollector.translateToLocal("blightfallmanual.taint"));
                 break;
             case 12:
             case 13:
-                list.add("\u00a7o" + StatCollector.translateToLocal("blightfallmanual.sarah"));
+                list.add("§o" + StatCollector.translateToLocal("blightfallmanual.sarah"));
                 break;
             case 14:
-                list.add("\u00a7o" + StatCollector.translateToLocal("blightfallmanual.dark"));
+                list.add("§o" + StatCollector.translateToLocal("blightfallmanual.dark"));
         }
     }
 

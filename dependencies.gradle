@@ -34,10 +34,11 @@
  * For more details, see https://docs.gradle.org/8.0.1/userguide/java_library_plugin.html#sec:java_library_configurations_graph
  */
 dependencies {
-    api(rfg.deobf("curse.maven:iguanatweaks-223248:2230545"))
-//    api("com.github.GTNewHorizons:Mantle:0.4.1:dev")
-//    api("com.github.GTNewHorizons:TinkersConstruct:1.11.15-GTNH:dev")
+    runtimeOnly("com.github.GTNewHorizons:AppleCore:3.3.0:dev")
+    runtimeOnly("com.github.GTNewHorizons:Applied-Energistics-2-Unofficial:rv3-beta-342-GTNH:dev")
+
     api(rfg.deobf("curse.maven:tconstruct-74072:2264246"))
     api(rfg.deobf("curse.maven:mantle-74924:2264244"))
     api(rfg.deobf("curse.maven:ubc-72744:2304497"))
+    api(rfg.deobf("curse.maven:iguanatweaks-223248:2230545"))
 }

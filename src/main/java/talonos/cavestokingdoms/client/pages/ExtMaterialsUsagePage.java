@@ -18,6 +18,7 @@ import org.w3c.dom.NodeList;
 import cpw.mods.fml.common.registry.GameRegistry;
 import iguanaman.iguanatweakstconstruct.util.HarvestLevels;
 import mantle.client.pages.BookPage;
+import talonos.cavestokingdoms.CavesToKingdoms;
 
 public class ExtMaterialsUsagePage extends BookPage {
 
@@ -42,28 +43,28 @@ public class ExtMaterialsUsagePage extends BookPage {
             tools.addAll(this.iterateNode("mods", element));
             armors = this.iterateNode("armor", element);
         } catch (Exception e) {
-            e.printStackTrace();
+            CavesToKingdoms.logger.error("Error reading page: {}", element.getTextContent(), e);
         }
     }
 
     @Override
     public void renderContentLayer(int localWidth, int localHeight, boolean isTranslatable) {
         String[] toolStrings = new String[3];
-        toolStrings[0] = "\u00a74Cannot make normal tools!";
-        toolStrings[1] = "\u00a72Can be used to make normal tools:";
-        toolStrings[2] = "\u00a74Construction and use of normal tools prohibited:";
+        toolStrings[0] = "§4Cannot make normal tools!";
+        toolStrings[1] = "§2Can be used to make normal tools:";
+        toolStrings[2] = "§4Construction and use of normal tools prohibited:";
 
         String[] partStrings = new String[3];
-        partStrings[0] = "\u00a74Cannot be used to make tool parts!";
-        partStrings[1] = "\u00a72Can be used to make parts in a part builder.";
-        partStrings[2] = "\u00a72Can be cast into tool parts with a \u00a7lsmeltery.";
+        partStrings[0] = "§4Cannot be used to make tool parts!";
+        partStrings[1] = "§2Can be used to make parts in a part builder.";
+        partStrings[2] = "§2Can be cast into tool parts with a §lsmeltery.";
 
         String[] armorStrings = new String[3];
-        armorStrings[0] = "\u00a74Cannot be used to make armor.";
-        armorStrings[1] = "\u00a72Can be used to make normal armor:";
-        armorStrings[2] = "\u00a72Must use \u00a7lLogs\u00a7r\u00a72 to make normal armor.";
+        armorStrings[0] = "§4Cannot be used to make armor.";
+        armorStrings[1] = "§2Can be used to make normal armor:";
+        armorStrings[2] = "§2Must use §lLogs§r§2 to make normal armor.";
 
-        manual.fonts.drawString("\u00a7n" + title, localWidth + 70, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + title, localWidth + 70, localHeight + 4, 0);
 
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         RenderHelper.enableGUIStandardItemLighting();
@@ -95,16 +96,12 @@ public class ExtMaterialsUsagePage extends BookPage {
             toolDesc1 += "Durability: " + tools.get(0)
                 .getMaxDamage();
             if (tools.get(0)
-                .getItem() instanceof ItemPickaxe) {
-                ItemPickaxe pick = (ItemPickaxe) tools.get(0)
-                    .getItem();
-                if (pick != null) {
-                    int harvestLevel = pick.getHarvestLevel(tools.get(0), "pickaxe");
-                    Item.ToolMaterial mat = Item.ToolMaterial.valueOf(pick.getToolMaterialName());
-                    toolDesc1 += " - Harvest Level: " + HarvestLevels.getHarvestLevelName(harvestLevel);
-                    toolDesc2 += "Speed: " + mat.getEfficiencyOnProperMaterial();
-                    toolDesc2 += " - Free Ench. Levels: " + mat.getEnchantability();
-                }
+                .getItem() instanceof ItemPickaxe pick) {
+                int harvestLevel = pick.getHarvestLevel(tools.get(0), "pickaxe");
+                Item.ToolMaterial mat = Item.ToolMaterial.valueOf(pick.getToolMaterialName());
+                toolDesc1 += " - Harvest Level: " + HarvestLevels.getHarvestLevelName(harvestLevel);
+                toolDesc2 += "Speed: " + mat.getEfficiencyOnProperMaterial();
+                toolDesc2 += " - Free Ench. Levels: " + mat.getEnchantability();
             }
         }
 

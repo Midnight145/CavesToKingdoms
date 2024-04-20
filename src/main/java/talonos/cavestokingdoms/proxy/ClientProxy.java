@@ -1,4 +1,4 @@
-package talonos.cavestokingdoms.proxies;
+package talonos.cavestokingdoms.proxy;
 
 import java.lang.reflect.Field;
 
@@ -19,15 +19,15 @@ import talonos.cavestokingdoms.client.pages.ExtMaterialsUsagePage;
 
 public class ClientProxy extends CommonProxy {
 
-    private Field manualItemStack = null;
+    private final Field manualItemStack;
 
     public ClientProxy() {
-        // try {
-        // manualItemStack = GuiManual.class.getDeclaredField("itemstackBook");
-        // manualItemStack.setAccessible(true);
-        // } catch (NoSuchFieldException ex) {
-        // throw new RuntimeException("Failed to find 'itemstackBook' field of GuiManual.", ex);
-        // }
+        try {
+            manualItemStack = GuiManual.class.getDeclaredField("itemstackBook");
+            manualItemStack.setAccessible(true);
+        } catch (NoSuchFieldException ex) {
+            throw new RuntimeException("Failed to find 'itemstackBook' field of GuiManual.", ex);
+        }
     }
 
     @Override

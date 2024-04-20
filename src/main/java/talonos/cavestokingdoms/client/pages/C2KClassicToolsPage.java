@@ -84,8 +84,8 @@ public class C2KClassicToolsPage extends OreDiscoveryPage {
             nodes = element.getElementsByTagName("requiresIcon");
             if (nodes.item(i) != null && nodes.item(i)
                 .getTextContent() != null) // who knows what
-                                           // could go wrong?
-                                           // :/
+            // could go wrong?
+            // :/
             {
                 String total = nodes.item(i)
                     .getTextContent();
@@ -123,7 +123,7 @@ public class C2KClassicToolsPage extends OreDiscoveryPage {
         String miningSpeed = StatCollector.translateToLocal("manual.cavestokingdoms.miningspeed");
 
         if (title[i] != null) {
-            manual.fonts.drawString("\u00a7n" + title[i], localWidth + 70, localHeight + 4, 0);
+            manual.fonts.drawString("§n" + title[i], localWidth + 70, localHeight + 4, 0);
         }
 
         if (description[i] != null && !description[i].isEmpty()) {
@@ -182,7 +182,7 @@ public class C2KClassicToolsPage extends OreDiscoveryPage {
         String pleasetouch = StatCollector.translateToLocal("manual.cavestokingdoms.pleasetouch");
         String tounlock = StatCollector.translateToLocal("manual.cavestokingdoms.tounlock");
 
-        manual.fonts.drawString("\u00a7n" + undiscovered, localWidth + 14, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + undiscovered, localWidth + 14, localHeight + 4, 0);
         manual.fonts.drawString(pleasetouch, localWidth + 18, localHeight + 16, 0);
         manual.fonts.drawString(tounlock, localWidth + 60, localHeight + 26, 0);
 
