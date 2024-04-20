@@ -168,6 +168,10 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
                 manual.fonts
                     .drawString(baseAttack + ": " + material.attack() / 2f + heart, localWidth, localHeight + 100, 0);
             }
+            if (material.stonebound > 0) {
+                manual.fonts.drawString("Stonebound: " + material.stonebound, localWidth, localHeight + 110, 0);
+                localHeight += 10;
+            }
             manual.fonts.drawString(
                 xpRequired + ": " + (XPAdjustmentMap.get(material.materialName) * 100f) + "% " + normal,
                 localWidth,

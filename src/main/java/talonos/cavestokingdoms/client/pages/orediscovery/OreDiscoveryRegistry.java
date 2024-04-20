@@ -69,9 +69,10 @@ public class OreDiscoveryRegistry {
             "discover.cavestokingdoms.bedrockium");
         registerDiscovery(GameRegistry.findItem("Natura", "bloodwood"), 0, "discover.cavestokingdoms.bloodwood");
         registerDiscovery(GameRegistry.findItem("Natura", "planks"), 4, "discover.cavestokingdoms.bloodwood");
-        registerDiscovery(GameRegistry.findItem("Tconstruct", "strangeFood"), 1, "discover.cavestokingdoms.blueslime");
+        registerDiscovery(GameRegistry.findItem("TConstruct", "strangeFood"), 0, "discover.cavestokingdoms.blueslime");
         registerDiscovery(GameRegistry.findItem("minecraft", "dye"), 15, "discover.cavestokingdoms.bonemeal");
         registerDiscovery(GameRegistry.findItem("minecraft", "cactus"), "discover.cavestokingdoms.cactus");
+        registerDiscovery(GameRegistry.findItem("Natura", "Saguaro"), 0, "discover.cavestokingdoms.cactus");
         registerDiscovery(
             GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"),
             1,
@@ -114,7 +115,7 @@ public class OreDiscoveryRegistry {
         registerDiscovery(GameRegistry.findItem("Natura", "planks"), 12, "discover.cavestokingdoms.fusewood");
         registerDiscovery(GameRegistry.findItem("Natura", "tree"), 2, "discover.cavestokingdoms.ghostwood");
         registerDiscovery(GameRegistry.findItem("Natura", "planks"), 2, "discover.cavestokingdoms.ghostwood");
-        registerDiscovery(GameRegistry.findItem("Tconstruct", "materials"), 36, "discover.cavestokingdoms.glue");
+        registerDiscovery(GameRegistry.findItem("TConstruct", "materials"), 36, "discover.cavestokingdoms.glue");
         registerDiscovery(GameRegistry.findItem("minecraft", "slime_ball"), "discover.cavestokingdoms.greenslime");
         registerDiscovery(
             GameRegistry.findItem("ThaumicTinkerer", "kamiResource"),

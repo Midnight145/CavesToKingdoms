@@ -17,57 +17,6 @@ By Ayumu Nagasawa</text>
     <page type="text">
         <text>While most tools and weapons created these days use Dr. Diyo's modular tool system, some people (especially those fond of enchantments) prefer classical tools. This book describes the properties of such tools.</text>
     </page>
-
-<!--    <page type = "c2kClassicToolsPage">
-        <title>Tin</title>
-        <requires>discover.cavestokingdoms.tin</requires>
-        <requiresIcon>TConstruct:materials:10</requiresIcon>
-        <text></text>
-        <tools>
-            <tool>ThermalFoundation:tool.pickaxeTin</tool>
-            <tool>ThermalFoundation:tool.shovelTin</tool>
-            <tool>ThermalFoundation:tool.axeTin</tool>
-            <tool>ThermalFoundation:tool.hoeTin</tool>
-            <tool>ThermalFoundation:tool.swordTin</tool>
-        </tools>
-        <title>Lead</title>
-        <requires>discover.cavestokingdoms.lead</requires>
-        <requiresIcon>ThermalFoundation:material:67</requiresIcon>
-        <text></text>
-        <tools>
-            <tool>ThermalFoundation:tool.pickaxeLead</tool>
-            <tool>ThermalFoundation:tool.shovelLead</tool>
-            <tool>ThermalFoundation:tool.axeLead</tool>
-            <tool>ThermalFoundation:tool.hoeLead</tool>
-            <tool>ThermalFoundation:tool.swordLead</tool>
-        </tools>
-    </page>
-
-    <page type = "c2kClassicToolsPage">
-        <title>Ferrous</title>
-        <requires>discover.cavestokingdoms.nickel</requires>
-        <requiresIcon>ThermalFoundation:material:68</requiresIcon>
-        <text></text>
-        <tools>
-            <tool>ThermalFoundation:tool.pickaxeNickel</tool>
-            <tool>ThermalFoundation:tool.shovelNickel</tool>
-            <tool>ThermalFoundation:tool.axeNickel</tool>
-            <tool>ThermalFoundation:tool.hoeNickel</tool>
-            <tool>ThermalFoundation:tool.swordNickel</tool>
-        </tools>
-        <title>Invar</title>
-        <requires>discover.cavestokingdoms.invar</requires>
-        <requiresIcon>ThermalFoundation:material:72</requiresIcon>
-        <text></text>
-        <tools>
-            <tool>ThermalFoundation:tool.pickaxeInvar</tool>
-            <tool>ThermalFoundation:tool.shovelInvar</tool>
-            <tool>ThermalFoundation:tool.axeInvar</tool>
-            <tool>ThermalFoundation:tool.hoeInvar</tool>
-            <tool>ThermalFoundation:tool.swordInvar</tool>
-        </tools>
-    </page> -->
-
     <page type = "c2kClassicToolsPage">
         <title>Silver</title>
         <requires>discover.cavestokingdoms.silver</requires>
