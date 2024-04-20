@@ -8,6 +8,8 @@ public class AddDiscoveryPacket implements IMessage {
 
     private String discoveryName;
 
+    public AddDiscoveryPacket() {}
+
     public AddDiscoveryPacket(String name) {
         this.discoveryName = name;
     }
