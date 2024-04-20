@@ -15,7 +15,7 @@ import tconstruct.library.weaponry.ArrowShaftMaterial;
 
 public class ListShaftMaterials implements ICommand {
 
-    private final List<String> aliases = new ArrayList<>(2);
+    private List aliases = new ArrayList(2);
 
     public ListShaftMaterials() {
         aliases.add("blightfallListShaftMaterials");
@@ -33,7 +33,7 @@ public class ListShaftMaterials implements ICommand {
     }
 
     @Override
-    public List<String> getCommandAliases() {
+    public List getCommandAliases() {
         return aliases;
     }
 
@@ -58,7 +58,7 @@ public class ListShaftMaterials implements ICommand {
     }
 
     @Override
-    public List<String> addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_) {
+    public List addTabCompletionOptions(ICommandSender p_71516_1_, String[] p_71516_2_) {
         return null;
     }
 

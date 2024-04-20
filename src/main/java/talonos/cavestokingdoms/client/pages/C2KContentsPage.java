@@ -23,7 +23,7 @@ public class C2KContentsPage extends BookPage {
     @Override
     public void readPageFromXML(Element element) {
         NodeList nodes = element.getElementsByTagName("text");
-        text = nodes.item(0)
+        if (nodes != null) text = nodes.item(0)
             .getTextContent();
 
         nodes = element.getElementsByTagName("link");

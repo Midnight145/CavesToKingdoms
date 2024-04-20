@@ -1,5 +1,7 @@
 package talonos.cavestokingdoms;
 
+import net.minecraftforge.common.MinecraftForge;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -12,6 +14,7 @@ import talonos.cavestokingdoms.command.DiscoverAll;
 import talonos.cavestokingdoms.command.ListShaftMaterials;
 import talonos.cavestokingdoms.command.ScanBlocks;
 import talonos.cavestokingdoms.command.WipeDiscoveryProgress;
+import talonos.cavestokingdoms.extendedproperties.OrbEventHandler;
 import talonos.cavestokingdoms.lib.DEFS;
 import talonos.cavestokingdoms.network.CavesToKingdomsNetwork;
 import talonos.cavestokingdoms.proxies.CommonProxy;
@@ -30,12 +33,15 @@ public class CavesToKingdoms {
     public static void preInit(FMLPreInitializationEvent event) {
         CtKBlock.init();
         CtKItems.init();
+        proxy.registerTileEntities();
         UBCIntegration.init(event);
     }
 
     @Mod.EventHandler
     public static void init(FMLInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(new OrbEventHandler());
         CavesToKingdomsNetwork.init();
+
         manualInfo = new ManualInfo();
     }
 

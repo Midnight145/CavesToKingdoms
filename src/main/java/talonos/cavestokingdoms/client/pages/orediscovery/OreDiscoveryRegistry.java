@@ -3,6 +3,7 @@ package talonos.cavestokingdoms.client.pages.orediscovery;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -35,7 +36,7 @@ public class OreDiscoveryRegistry {
         return instance;
     }
 
-    private final List<IDiscoveryEntry> discoverData = new ArrayList<>();
+    private List<IDiscoveryEntry> discoverData = new ArrayList<IDiscoveryEntry>();
 
     public OreDiscoveryRegistry() {
         // Handle registry code.
@@ -352,6 +353,18 @@ public class OreDiscoveryRegistry {
         discoverData.add(new OreDictionaryDiscoveryEntry(oreDictionaryEntry, discovery));
     }
 
+    public void registerDiscovery(Block block, String discovery) {
+        this.registerDiscovery(block, 0, 0, discovery);
+    }
+
+    public void registerDiscovery(Block block, int meta, String discovery) {
+        this.registerDiscovery(block, meta, 0xF, discovery);
+    }
+
+    public void registerDiscovery(Block block, int meta, int metaFlags, String discovery) {
+        this.registerDiscovery(Item.getItemFromBlock(block), meta, metaFlags, discovery);
+    }
+
     public void registerDiscovery(Item item, String discovery) {
         this.registerDiscovery(item, 0, 0, discovery);
     }
@@ -367,10 +380,15 @@ public class OreDiscoveryRegistry {
     public List<String> findDiscoveries(ItemStack stack) {
         if (stack == null) return null;
 
-        List<String> discoveries = new ArrayList<>();
+        List<String> discoveries = new ArrayList<String>();
 
-        for (IDiscoveryEntry discoverDatum : discoverData) {
-            if (discoverDatum.matches(stack)) discoveries.add(discoverDatum.getDiscoveredOreData());
+        int size = discoverData.size();
+        for (int i = 0; i < size; i++) {
+            if (discoverData.get(i)
+                .matches(stack))
+                discoveries.add(
+                    discoverData.get(i)
+                        .getDiscoveredOreData());
         }
 
         return discoveries;
@@ -409,8 +427,10 @@ public class OreDiscoveryRegistry {
 
         List<String> discoveryOres = findDiscoveries(item);
 
-        if (discoveryOres != null && !discoveryOres.isEmpty()) {
-            for (String discovery : discoveryOres) {
+        if (discoveryOres != null && discoveryOres.size() != 0) {
+            int discoveryCount = discoveryOres.size();
+            for (int i = 0; i < discoveryCount; i++) {
+                String discovery = discoveryOres.get(i);
                 addDiscovery(player, discovery);
             }
         }
@@ -438,7 +458,7 @@ public class OreDiscoveryRegistry {
         if (!player.worldObj.isRemote) player.addChatMessage(
             new ChatComponentTranslation(
                 "blightfallmanual.discovery.add",
-                StatCollector.translateToLocal(discoveryOre)));
+                new Object[] { StatCollector.translateToLocal(discoveryOre) }));
         if (player instanceof EntityPlayerMP)
             CavesToKingdomsNetwork.sendToPlayer(new AddDiscoveryPacket(discoveryOre), (EntityPlayerMP) player);
     }

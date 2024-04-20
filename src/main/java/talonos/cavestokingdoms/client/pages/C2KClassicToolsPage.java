@@ -38,22 +38,25 @@ public class C2KClassicToolsPage extends OreDiscoveryPage {
     public void readPageFromXML(Element element) {
         for (int i = 0; i < 2; i++) {
             NodeList nodes = element.getElementsByTagName("title");
-            title[i] = nodes.item(i)
-                .getTextContent();
-
+            if (nodes != null) {
+                title[i] = nodes.item(i)
+                    .getTextContent();
+            }
             nodes = element.getElementsByTagName("text");
-            description[i] = nodes.item(i)
-                .getTextContent();
+            if (nodes != null) {
+                description[i] = nodes.item(i)
+                    .getTextContent();
+            }
 
             nodes = element.getElementsByTagName("requires");
-            if (nodes.item(0) != null) {
+            if (nodes != null && nodes.item(0) != null) {
                 requires[i] = nodes.item(i)
                     .getTextContent();
             }
 
             // Get the icons
             nodes = element.getElementsByTagName("tools");
-            if (nodes.item(i) != null) {
+            if (nodes != null && nodes.item(i) != null) {
                 Node n = nodes.item(i);
                 Element toolElement = (Element) n;
                 NodeList tools = toolElement.getElementsByTagName("tool");
@@ -82,10 +85,11 @@ public class C2KClassicToolsPage extends OreDiscoveryPage {
             requiredIcon[i] = new ItemStack(Items.rotten_flesh);
 
             nodes = element.getElementsByTagName("requiresIcon");
-            if (nodes.item(i) != null && nodes.item(i)
-                .getTextContent() != null) // who knows what
-                                           // could go wrong?
-                                           // :/
+            if (nodes != null && nodes.item(i) != null
+                && nodes.item(i)
+                    .getTextContent() != null) // who knows what
+                                               // could go wrong?
+                                               // :/
             {
                 String total = nodes.item(i)
                     .getTextContent();
@@ -121,12 +125,15 @@ public class C2KClassicToolsPage extends OreDiscoveryPage {
         String durability = StatCollector.translateToLocal("manual.cavestokingdoms.durability");
         String freelevels = StatCollector.translateToLocal("manual.cavestokingdoms.freelevels");
         String miningSpeed = StatCollector.translateToLocal("manual.cavestokingdoms.miningspeed");
+        String baseAttack = StatCollector.translateToLocal("manual.cavestokingdoms.attackdamage");
+        String heart_ = StatCollector.translateToLocal("manual.cavestokingdoms.heart");
+        String hearts = StatCollector.translateToLocal("manual.cavestokingdoms.hearts");
 
         if (title[i] != null) {
             manual.fonts.drawString("\u00a7n" + title[i], localWidth + 70, localHeight + 4, 0);
         }
 
-        if (description[i] != null && !description[i].isEmpty()) {
+        if (description[i] != null && !description[i].equals("")) {
             manual.fonts.drawSplitString(description[i], localWidth, localHeight + 16, 178, 0);
         }
 
@@ -160,6 +167,7 @@ public class C2KClassicToolsPage extends OreDiscoveryPage {
             int dura = pickItem.getMaxDamage();
             int levels = mat.getEnchantability();
             float speed = mat.getEfficiencyOnProperMaterial();
+            float attack = mat.getDamageVsEntity();
 
             toolDesc1 += durability + ": " + dura;
             toolDesc1 += " - " + harvestLevel + ": " + HarvestLevels.getHarvestLevelName(hLevel);

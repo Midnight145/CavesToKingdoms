@@ -5,10 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.HashMap;
-import java.util.List;
 
 import net.minecraft.block.Block;
-import net.minecraft.command.ICommand;
+import net.minecraft.command.CommandBase;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -21,7 +20,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 
-public class ScanBlocks implements ICommand {
+public class ScanBlocks extends CommandBase {
 
     @Override
     public String getCommandName() {
@@ -34,43 +33,18 @@ public class ScanBlocks implements ICommand {
     }
 
     @Override
-    public List<String> getCommandAliases() {
-        return null;
-    }
-
-    @Override
     public void processCommand(ICommandSender p_71515_1_, String[] p_71515_2_) {
         p_71515_1_.addChatMessage(new ChatComponentText("Beginning Scan"));
-        new CommandBlockScanner(p_71515_1_);
+        CommandBlockScanner scanner = new CommandBlockScanner(p_71515_1_);
     }
 
-    @Override
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
-        return false;
-    }
+    public class CommandBlockScanner {
 
-    @Override
-    public List<String> addTabCompletionOptions(ICommandSender sender, String[] args) {
-        return null;
-    }
-
-    @Override
-    public boolean isUsernameIndex(String[] args, int index) {
-        return false;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
-    }
-
-    public static class CommandBlockScanner {
-
-        private final ICommandSender commandSender;
+        private ICommandSender commandSender;
         private int x = 0;
         private int z = 0;
         private double total = 0;
-        private final HashMap<String, Integer> blockData = new HashMap<>();
+        private HashMap<String, Integer> blockData = new HashMap<String, Integer>();
 
         public CommandBlockScanner(ICommandSender commandSender) {
             this.commandSender = commandSender;
@@ -134,12 +108,17 @@ public class ScanBlocks implements ICommand {
                 FileOutputStream streamOut = FileUtils.openOutputStream(new File("scanOut.csv"));
 
                 OutputStreamWriter writer = new OutputStreamWriter(streamOut);
-                writer.write("block,count,percent" + System.lineSeparator());
+                writer.write("block,count,percent" + System.getProperty("line.separator"));
                 for (String key : blockData.keySet()) {
                     int count = blockData.get(key);
 
                     double percent = ((double) count / total) * 100.0;
-                    writer.write(key + "," + count + "," + percent + System.lineSeparator());
+                    writer.write(
+                        key + ","
+                            + Integer.toString(count)
+                            + ","
+                            + Double.toString(percent)
+                            + System.getProperty("line.separator"));
                 }
 
                 writer.close();

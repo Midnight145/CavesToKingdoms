@@ -9,6 +9,7 @@ public class DEFS {
 
     public static final String CLIENTPROXYLOCATION = "talonos." + MODID + ".proxies.ClientProxy";
     public static final String COMMONPROXYLOCATION = "talonos." + MODID + ".proxies.CommonProxy";
+    public static final String RESOURCESPREFIX = "";
     public static final String AltarBlockName = "altarBlock";
     public static final String SpiritStoneBlockName = "spiritStone";
 

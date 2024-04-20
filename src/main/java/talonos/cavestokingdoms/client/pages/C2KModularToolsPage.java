@@ -41,15 +41,19 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
         icons = new ItemStack[2];
 
         NodeList nodes = element.getElementsByTagName("title");
-        title = nodes.item(0)
-            .getTextContent();
+        if (nodes != null) {
+            title = nodes.item(0)
+                .getTextContent();
+        }
 
         nodes = element.getElementsByTagName("text");
-        description = nodes.item(0)
-            .getTextContent();
+        if (nodes != null) {
+            description = nodes.item(0)
+                .getTextContent();
+        }
 
         nodes = element.getElementsByTagName("requires");
-        if (nodes.item(0) != null) {
+        if (nodes != null && nodes.item(0) != null) {
             requires = nodes.item(0)
                 .getTextContent();
         }
@@ -61,10 +65,11 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
         for (int i = 0; i < 2; i++) {
             String nodeToGet = (i == 0 ? "icon" : "requiresIcon");
             nodes = element.getElementsByTagName(nodeToGet);
-            if (nodes.item(0) != null && nodes.item(0)
-                .getTextContent() != null) // who knows what
-                                           // could go wrong?
-                                           // :/
+            if (nodes != null && nodes.item(0) != null
+                && nodes.item(0)
+                    .getTextContent() != null) // who knows what
+                                               // could go wrong?
+                                               // :/
             {
                 String total = nodes.item(0)
                     .getTextContent();
@@ -85,7 +90,7 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
         }
 
         nodes = element.getElementsByTagName("toolmaterial");
-        if (nodes.getLength() > 0) {
+        if (nodes != null && nodes.getLength() > 0) {
             material = TConstructRegistry.getMaterial(
                 nodes.item(0)
                     .getTextContent());
@@ -177,7 +182,7 @@ public class C2KModularToolsPage extends OreDiscoveryPage {
             // Here starts a list of attributes.
             int offset = 0;
             String ability = material.ability();
-            if (!ability.isEmpty()) {
+            if (!ability.equals("")) {
                 manual.fonts.drawString(materialTrait + ": " + ability, localWidth, localHeight + 125 + 16 * offset, 0);
                 offset++;
                 if (material.name()
