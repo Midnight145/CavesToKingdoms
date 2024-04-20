@@ -33,7 +33,6 @@ public class CavesToKingdoms {
     public static void preInit(FMLPreInitializationEvent event) {
         CtKBlock.init();
         CtKItems.init();
-        proxy.registerTileEntities();
         UBCIntegration.init(event);
     }
 

@@ -19,15 +19,6 @@ public class CtKBlock extends Block {
         super(Material.rock);
     }
 
-    /**
-     * Constructor for defined material.
-     * 
-     * @param material
-     */
-    public CtKBlock(Material material) {
-        super(material);
-    }
-
     public static Block altarBlock;
     public static Block spiritStoneBlock;
 
