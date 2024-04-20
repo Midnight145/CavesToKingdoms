@@ -6,7 +6,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mantle.client.pages.BookPage;
 import talonos.cavestokingdoms.CavesToKingdoms;
-import talonos.cavestokingdoms.proxies.ClientProxy;
+import talonos.cavestokingdoms.proxy.ClientProxy;
 
 @SideOnly(Side.CLIENT)
 public abstract class OreDiscoveryPage extends BookPage {

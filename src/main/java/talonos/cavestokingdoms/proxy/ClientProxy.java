@@ -1,4 +1,4 @@
-package talonos.cavestokingdoms.proxies;
+package talonos.cavestokingdoms.proxy;
 
 import java.lang.reflect.Field;
 
