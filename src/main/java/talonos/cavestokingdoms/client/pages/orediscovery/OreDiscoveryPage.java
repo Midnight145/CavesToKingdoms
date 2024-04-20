@@ -11,20 +11,10 @@ import talonos.cavestokingdoms.proxy.ClientProxy;
 @SideOnly(Side.CLIENT)
 public abstract class OreDiscoveryPage extends BookPage {
 
-    private String discoveryName;
-
-    protected OreDiscoveryPage(String discoveryName) {
-        this.discoveryName = discoveryName;
-    }
-
     protected OreDiscoveryPage() {}
 
-    protected boolean isDiscovered() {
-        return isDiscovered(discoveryName);
-    }
-
     protected boolean isDiscovered(String neededDiscovery) {
-        if (neededDiscovery == null || neededDiscovery.equals("")) {
+        if (neededDiscovery == null || neededDiscovery.isEmpty()) {
             // No discovery needed; default to true;
             return true;
         }

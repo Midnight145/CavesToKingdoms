@@ -1,7 +1,5 @@
 package talonos.cavestokingdoms.client.pages;
 
-import static mantle.lib.CoreRepo.logger;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -56,44 +54,35 @@ public class C2KMiningPage extends OreDiscoveryPage {
     int indexNum = 0;
 
     // If it is locked, what unlocks it?
-    List<String> examples = new ArrayList<String>();
+    List<String> examples = new ArrayList<>();
 
     @Override
     public void readPageFromXML(Element element) {
         NodeList nodes = element.getElementsByTagName("title");
-        if (nodes != null) {
-            title = nodes.item(0)
-                .getTextContent();
-        }
+        title = nodes.item(0)
+            .getTextContent();
         nodes = element.getElementsByTagName("text");
-        if (nodes != null) {
-            description = nodes.item(0)
-                .getTextContent();
-        }
+        description = nodes.item(0)
+            .getTextContent();
 
         nodes = element.getElementsByTagName("min");
-        if (nodes != null) {
-            minheight = Integer.parseInt(
-                nodes.item(0)
-                    .getTextContent());
-        }
+        minheight = Integer.parseInt(
+            nodes.item(0)
+                .getTextContent());
         nodes = element.getElementsByTagName("max");
-        if (nodes != null) {
-            maxheight = Integer.parseInt(
-                nodes.item(0)
-                    .getTextContent());
-        }
+        maxheight = Integer.parseInt(
+            nodes.item(0)
+                .getTextContent());
 
         nodes = element.getElementsByTagName("location");
-        if (nodes != null && nodes.item(0) != null
-            && nodes.item(0)
-                .getTextContent() != null) {
+        if (nodes.item(0) != null && nodes.item(0)
+            .getTextContent() != null) {
             location = nodes.item(0)
                 .getTextContent();
         }
 
         nodes = element.getElementsByTagName("minesAsLevel");
-        if (nodes != null && nodes.item(0) != null) {
+        if (nodes.item(0) != null) {
             try {
                 minesAsLevel = Integer.parseInt(
                     nodes.item(0)
@@ -106,7 +95,7 @@ public class C2KMiningPage extends OreDiscoveryPage {
 
         // Get the ore
         nodes = element.getElementsByTagName("ore");
-        if (nodes != null && nodes.item(0) != null) {
+        if (nodes.item(0) != null) {
             Node oreNode = nodes.item(0);
             String total = oreNode.getTextContent();
             String mod = total.substring(0, total.indexOf(':'));
@@ -137,11 +126,6 @@ public class C2KMiningPage extends OreDiscoveryPage {
 
         location = "cavestokingdoms:textures/gui/locations" + pictureNum + ".png";
         background = new ResourceLocation(location);
-        if (background == null) {
-            logger.warn(
-                nodes.item(0)
-                    .getTextContent() + " could not be found in the image cache(location)!");
-        }
     }
 
     @Override
@@ -154,38 +138,53 @@ public class C2KMiningPage extends OreDiscoveryPage {
     }
 
     private void loadStringsAndImageLoc(String location) {
-        if (location.equals("all") || location.equals(("chunkerror"))) {
-            locationImg = 0;
-        } else if (location.equals("nether")) {
-            locationImg = 1;
-        } else if (location.equals("eerie")) {
-            locationImg = 2;
-        } else if (location.equals("cache")) {
-            locationImg = 3;
-        } else if (location.equals("alldesert")) {
-            locationImg = 4;
-        } else if (location.equals("swamps")) {
-            locationImg = 5;
-        } else if (location.equals("desert")) {
-            locationImg = 15;
-        } else if (location.equals("plains")) {
-            locationImg = 7;
-        } else if (location.equals("mountains")) {
-            locationImg = 8;
-        }
-
-        else if (location.equals("magic")) {
-            locationImg = 9;
-        } else if (location.equals("cold")) {
-            locationImg = 10;
-        } else if (location.equals("ocean")) {
-            locationImg = 11;
-        } else if (location.equals("mushroom")) {
-            locationImg = 12;
-        } else if (location.equals("forests")) {
-            locationImg = 13;
-        } else {
-            locationImg = 14;
+        switch (location) {
+            case "all":
+            case ("chunkerror"):
+                locationImg = 0;
+                break;
+            case "nether":
+                locationImg = 1;
+                break;
+            case "eerie":
+                locationImg = 2;
+                break;
+            case "cache":
+                locationImg = 3;
+                break;
+            case "alldesert":
+                locationImg = 4;
+                break;
+            case "swamps":
+                locationImg = 5;
+                break;
+            case "desert":
+                locationImg = 15;
+                break;
+            case "plains":
+                locationImg = 7;
+                break;
+            case "mountains":
+                locationImg = 8;
+                break;
+            case "magic":
+                locationImg = 9;
+                break;
+            case "cold":
+                locationImg = 10;
+                break;
+            case "ocean":
+                locationImg = 11;
+                break;
+            case "mushroom":
+                locationImg = 12;
+                break;
+            case "forests":
+                locationImg = 13;
+                break;
+            default:
+                locationImg = 14;
+                break;
         }
 
         whereFound = StatCollector.translateToLocal("manual.cavestokingdoms.location." + location.toLowerCase());
@@ -199,7 +198,7 @@ public class C2KMiningPage extends OreDiscoveryPage {
         String between = StatCollector.translateToLocal("manual.cavestokingdoms.between");
         String and = StatCollector.translateToLocal("manual.cavestokingdoms.and");
 
-        manual.fonts.drawString("\u00a7n" + title, localWidth + 70, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + title, localWidth + 70, localHeight + 4, 0);
 
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         RenderHelper.enableGUIStandardItemLighting();
@@ -223,21 +222,20 @@ public class C2KMiningPage extends OreDiscoveryPage {
                     + " ("
                     + HarvestLevels.getHarvestLevelName(this.minesAsLevel)
                     + ")",
-                localWidth + 0,
+                localWidth,
                 localHeight + 25,
                 0);
         }
         manual.fonts.drawSplitString(
             requiredToMine + ": " + requiredLevel + " (" + HarvestLevels.getHarvestLevelName(requiredLevel) + ")",
-            localWidth + 0,
+            localWidth,
             localHeight + 35,
             100,
             0);
-        manual.fonts
-            .drawSplitString("\u00a7l" + biome + ": \u00a7r" + whereFound, localWidth + 0, localHeight + 60, 106, 0);
+        manual.fonts.drawSplitString("§l" + biome + ": §r" + whereFound, localWidth, localHeight + 60, 106, 0);
         manual.fonts.drawSplitString(
-            "\u00a7l" + height + ": \u00a7r" + between + " " + minheight + " " + and + " " + maxheight + ".",
-            localWidth + 0,
+            "§l" + height + ": §r" + between + " " + minheight + " " + and + " " + maxheight + ".",
+            localWidth,
             localHeight + 105,
             100,
             0);
@@ -253,8 +251,7 @@ public class C2KMiningPage extends OreDiscoveryPage {
         String suchAs = StatCollector.translateToLocal("manual.cavestokingdoms.suchas");
         String required = StatCollector.translateToLocal("discover.cavestokingdoms.harvestlevel" + requiredLevel);
 
-        manual.fonts
-            .drawString("\u00a7n" + entryOn + " " + title + " " + isLocked, localWidth + 28, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + entryOn + " " + title + " " + isLocked, localWidth + 28, localHeight + 4, 0);
         manual.fonts.drawString(toUnlock + " ", localWidth + 50, localHeight + 18, 0);
         manual.fonts.drawString(
             required + " " + suchAs,

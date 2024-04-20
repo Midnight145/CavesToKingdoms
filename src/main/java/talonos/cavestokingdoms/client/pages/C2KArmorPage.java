@@ -37,25 +37,21 @@ public class C2KArmorPage extends OreDiscoveryPage {
     public void readPageFromXML(Element element) {
         for (int i = 0; i < 2; i++) {
             NodeList nodes = element.getElementsByTagName("title");
-            if (nodes != null) {
-                title[i] = nodes.item(i)
-                    .getTextContent();
-            }
+            title[i] = nodes.item(i)
+                .getTextContent();
             nodes = element.getElementsByTagName("text");
-            if (nodes != null) {
-                description[i] = nodes.item(i)
-                    .getTextContent();
-            }
+            description[i] = nodes.item(i)
+                .getTextContent();
 
             nodes = element.getElementsByTagName("requires");
-            if (nodes != null && nodes.item(0) != null) {
+            if (nodes.item(0) != null) {
                 requires[i] = nodes.item(i)
                     .getTextContent();
             }
 
             // Get the icons
             nodes = element.getElementsByTagName("armors");
-            if (nodes != null && nodes.item(i) != null) {
+            if (nodes.item(i) != null) {
                 Node n = nodes.item(i);
                 Element toolElement = (Element) n;
                 NodeList tools = toolElement.getElementsByTagName("armor");
@@ -84,11 +80,10 @@ public class C2KArmorPage extends OreDiscoveryPage {
             requiredIcon[i] = new ItemStack(Items.rotten_flesh);
 
             nodes = element.getElementsByTagName("requiresIcon");
-            if (nodes != null && nodes.item(i) != null
-                && nodes.item(i)
-                    .getTextContent() != null) // who knows what
-                                               // could go wrong?
-                                               // :/
+            if (nodes.item(i) != null && nodes.item(i)
+                .getTextContent() != null) // who knows what
+            // could go wrong?
+            // :/
             {
                 String total = nodes.item(i)
                     .getTextContent();
@@ -122,17 +117,17 @@ public class C2KArmorPage extends OreDiscoveryPage {
         String durability = StatCollector.translateToLocal("manual.cavestokingdoms.durability");
         String freelevels = StatCollector.translateToLocal("manual.cavestokingdoms.freelevels");
 
-        manual.fonts.drawString("\u00a7n" + title[i], localWidth + 70, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + title[i], localWidth + 70, localHeight + 4, 0);
 
-        if (description[i] != null && !description[i].equals("")) {
-            if (icons[0][i] != null && icons[0][i].getItem() instanceof ItemArmor) {
+        if (description[i] != null && !description[i].isEmpty()) {
+            if (icons[0][i] != null && icons[0][i].getItem() instanceof ItemArmor armor) {
                 manual.fonts.drawSplitString(
                     description[i] + " "
                         + freelevels
                         + ": "
-                        + ((ItemArmor) icons[0][i].getItem()).getArmorMaterial()
+                        + armor.getArmorMaterial()
                             .getEnchantability(),
-                    localWidth + 0,
+                    localWidth,
                     localHeight + 58,
                     178,
                     0);
@@ -166,7 +161,8 @@ public class C2KArmorPage extends OreDiscoveryPage {
         for (int armor = 0; armor < 4; armor++) {
             ItemStack armorStack = icons[armor][i];
             if (armorStack != null && armorStack.getItem() instanceof ItemArmor) {
-                int maxDurability = ((ItemArmor) armorStack.getItem()).getMaxDamage(armorStack);
+                int maxDurability = armorStack.getItem()
+                    .getMaxDamage(armorStack);
                 int protection = ((ItemArmor) armorStack.getItem()).damageReduceAmount;
                 manual.fonts.drawString("" + maxDurability, localWidth + 79 + (armor * 18), localHeight + 36, 0);
                 manual.fonts.drawString("" + protection, localWidth + 82 + (armor * 18), localHeight + 46, 0);
@@ -180,7 +176,7 @@ public class C2KArmorPage extends OreDiscoveryPage {
         String pleasetouch = StatCollector.translateToLocal("manual.cavestokingdoms.pleasetouch");
         String tounlock = StatCollector.translateToLocal("manual.cavestokingdoms.tounlock");
 
-        manual.fonts.drawString("\u00a7n" + undiscovered, localWidth + 14, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + undiscovered, localWidth + 14, localHeight + 4, 0);
         manual.fonts.drawString(pleasetouch, localWidth + 18, localHeight + 16, 0);
         manual.fonts.drawString(tounlock, localWidth + 60, localHeight + 26, 0);
 

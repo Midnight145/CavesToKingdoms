@@ -16,6 +16,7 @@ import org.w3c.dom.NodeList;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import iguanaman.iguanatweakstconstruct.override.XPAdjustmentMap;
+import talonos.cavestokingdoms.CavesToKingdoms;
 import talonos.cavestokingdoms.client.pages.orediscovery.OreDiscoveryPage;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.tools.ArrowMaterial;
@@ -28,20 +29,19 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
     private static final int MAT_OFFSET = 78;
 
     // The materials this page depicts.
-    private ToolMaterial[] materials = new ToolMaterial[NUMBER_OF_MATS_PER_PAGE];
-    private BowMaterial[] bowMaterials = new BowMaterial[NUMBER_OF_MATS_PER_PAGE];
-    private ArrowMaterial[] arrowMaterials = new ArrowMaterial[NUMBER_OF_MATS_PER_PAGE];
-    private String[] matNames = new String[NUMBER_OF_MATS_PER_PAGE];
-    private String[] description = new String[NUMBER_OF_MATS_PER_PAGE];
+    private final ToolMaterial[] materials = new ToolMaterial[NUMBER_OF_MATS_PER_PAGE];
+    private final BowMaterial[] bowMaterials = new BowMaterial[NUMBER_OF_MATS_PER_PAGE];
+    private final ArrowMaterial[] arrowMaterials = new ArrowMaterial[NUMBER_OF_MATS_PER_PAGE];
+    private final String[] matNames = new String[NUMBER_OF_MATS_PER_PAGE];
+    private final String[] description = new String[NUMBER_OF_MATS_PER_PAGE];
 
-    private String[] requires = new String[NUMBER_OF_MATS_PER_PAGE];
-    private ItemStack[] requiredIcon = new ItemStack[NUMBER_OF_MATS_PER_PAGE];
+    private final String[] requires = new String[NUMBER_OF_MATS_PER_PAGE];
+    private final ItemStack[] requiredIcon = new ItemStack[NUMBER_OF_MATS_PER_PAGE];
 
     // Itemstacks representing the icons we'll end up drawing on the page.
-    private ItemStack[] icons = new ItemStack[NUMBER_OF_MATS_PER_PAGE];
-    private int[] iconMetadata = new int[NUMBER_OF_MATS_PER_PAGE];
+    private final ItemStack[] icons = new ItemStack[NUMBER_OF_MATS_PER_PAGE];
 
-    public static HashMap<String, Integer> mappings = new HashMap();
+    public static HashMap<String, Integer> mappings = new HashMap<>();
     public static boolean init = false;
 
     public static void init() {
@@ -61,26 +61,25 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
         try {
             for (int i = 0; i < 2; i++) {
                 NodeList nodes = element.getElementsByTagName("mat");
-                if (nodes != null && nodes.item(i) != null) {
+                if (nodes.item(i) != null) {
                     matNames[i] = nodes.item(i)
                         .getTextContent();
                 }
                 nodes = element.getElementsByTagName("text");
-                if (nodes != null && nodes.item(i) != null) {
+                if (nodes.item(i) != null) {
                     description[i] = nodes.item(i)
                         .getTextContent();
                 }
 
                 nodes = element.getElementsByTagName("requires");
-                if (nodes != null && nodes.item(i) != null) {
+                if (nodes.item(i) != null) {
                     requires[i] = nodes.item(i)
                         .getTextContent();
                 }
 
                 nodes = element.getElementsByTagName("icon");
-                if (nodes != null && nodes.item(i) != null
-                    && nodes.item(i)
-                        .getTextContent() != null) {
+                if (nodes.item(i) != null && nodes.item(i)
+                    .getTextContent() != null) {
                     String total = nodes.item(i)
                         .getTextContent();
                     String mod = total.substring(0, total.indexOf(':'));
@@ -100,9 +99,8 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
                 requiredIcon[i] = new ItemStack(Items.rotten_flesh);
 
                 nodes = element.getElementsByTagName("requiresIcon");
-                if (nodes != null && nodes.item(i) != null
-                    && nodes.item(i)
-                        .getTextContent() != null) {
+                if (nodes.item(i) != null && nodes.item(i)
+                    .getTextContent() != null) {
                     String total = nodes.item(i)
                         .getTextContent();
                     String mod = total.substring(0, total.indexOf(':'));
@@ -121,21 +119,17 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
 
                 // Get the material
                 nodes = element.getElementsByTagName("toolmaterial");
-                if (nodes != null && nodes.getLength() > 0) {
+                if (nodes.getLength() > 0) {
                     System.out.println("Getting from Materials");
                     materials[i] = TConstructRegistry.getMaterial(
                         nodes.item(i)
                             .getTextContent());
-                    if (materials[i] != null) {
-                        bowMaterials[i] = TConstructRegistry.getBowMaterial(mappings.get(materials[i].name()));
-                        arrowMaterials[i] = TConstructRegistry.getArrowMaterial(mappings.get(materials[i].name()));
-                    }
                 } else {
                     materials[i] = TConstructRegistry.getMaterial(matNames[i]);
-                    if (materials[i] != null) {
-                        bowMaterials[i] = TConstructRegistry.getBowMaterial(mappings.get(materials[i].name()));
-                        arrowMaterials[i] = TConstructRegistry.getArrowMaterial(mappings.get(materials[i].name()));
-                    }
+                }
+                if (materials[i] != null) {
+                    bowMaterials[i] = TConstructRegistry.getBowMaterial(mappings.get(materials[i].name()));
+                    arrowMaterials[i] = TConstructRegistry.getArrowMaterial(mappings.get(materials[i].name()));
                 }
 
                 if (materials[i] == null) {
@@ -145,15 +139,12 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
 
             }
         } catch (Exception e) {
-            System.out.println("An exception: ");
-            e.printStackTrace();
+            CavesToKingdoms.logger.error("Error while reading page from XML: {}", e);
         }
     }
 
     @Override
     public void renderContentLayer(int localWidth, int localHeight, boolean isTranslatable) {
-        // System.out.println("Req0"+requires[0]+"req1"+requires[1]);
-        // System.out.println("Req0"+requiredIcon[0]+"req1"+requiredIcon[1]);
         for (int i = 0; i < NUMBER_OF_MATS_PER_PAGE; i++) {
             if (isDiscovered(requires[i])) {
                 renderUnlocked(localWidth, localHeight + (MAT_OFFSET * i), i);
@@ -164,18 +155,18 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
     }
 
     private void renderUnlocked(int localWidth, int localHeight, int i) {
-        String durability = new String("Durability");
-        String drawSpeed = new String("Draw Delay");
-        String flightSpeed = new String("Launch Strength");
-        String xpRequired = new String("XP Required");
-        String mass = new String("Mass");
-        String breakChance = new String("Break Chance");
-        String baseAttack = new String("Attack Damage");
-        String heart_ = new String("Heart");
-        String hearts = new String("Hearts");
+        String durability = "Durability";
+        String drawSpeed = "Draw Delay";
+        String flightSpeed = "Launch Strength";
+        String xpRequired = "XP Required";
+        String mass = "Mass";
+        String breakChance = "Break Chance";
+        String baseAttack = "Attack Damage";
+        String heart_ = "Heart";
+        String hearts = "Hearts";
 
         if (materials[i] != null) {
-            manual.fonts.drawString("\u00a7n" + matNames[i], localWidth + 45, localHeight + 4, 0);
+            manual.fonts.drawString("§n" + matNames[i], localWidth + 45, localHeight + 4, 0);
         }
 
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
@@ -246,7 +237,7 @@ public class C2KBowMaterialsPage extends OreDiscoveryPage {
         String pleasetouch = StatCollector.translateToLocal("manual.cavestokingdoms.pleasetouch");
         String tounlock = StatCollector.translateToLocal("manual.cavestokingdoms.tounlock");
 
-        manual.fonts.drawString("\u00a7n" + undiscovered, localWidth + 14, localHeight + 4, 0);
+        manual.fonts.drawString("§n" + undiscovered, localWidth + 14, localHeight + 4, 0);
         manual.fonts.drawString(pleasetouch, localWidth + 18, localHeight + 16, 0);
         manual.fonts.drawString(tounlock, localWidth + 60, localHeight + 26, 0);
 
