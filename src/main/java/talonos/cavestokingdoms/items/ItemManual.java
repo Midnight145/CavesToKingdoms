@@ -49,7 +49,8 @@ public class ItemManual extends ItemOreManual {
     private BookData getData(ItemStack stack) {
         return switch (stack.getItemDamage()) {
             case 0 -> CavesToKingdoms.manualInfo.mats0;
-            case 1 -> CavesToKingdoms.manualInfo.mats1;
+            case 1 -> // noinspection DuplicateBranchesInSwitch
+                CavesToKingdoms.manualInfo.mats1;
             case 2 -> CavesToKingdoms.manualInfo.mats2;
             case 3 -> CavesToKingdoms.manualInfo.mats3;
             case 4 -> CavesToKingdoms.manualInfo.mats4;
@@ -69,7 +70,7 @@ public class ItemManual extends ItemOreManual {
 
     @Override
     @SideOnly(Side.CLIENT)
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par4) {
+    public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean par4) {
         switch (stack.getItemDamage()) {
             case 0:
             case 1:
@@ -98,6 +99,7 @@ public class ItemManual extends ItemOreManual {
         }
     }
 
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     @Override
     public void getSubItems(Item b, CreativeTabs tab, List list) {
         for (int damage = 0; damage < NUMBER_OF_MANUALS; damage++) {

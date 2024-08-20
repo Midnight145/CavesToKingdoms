@@ -317,7 +317,6 @@ public class C2KMiningPage extends OreDiscoveryPage {
                 examples.add("Elementium");
                 break;
             case 6:
-                examples.add("Alumite");
                 examples.add("Mithril");
                 examples.add("Cobalt");
                 examples.add("Carmot");
