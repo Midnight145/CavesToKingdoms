@@ -39,6 +39,5 @@ dependencies {
 
     api(rfg.deobf("curse.maven:tconstruct-74072:2264246"))
     api(rfg.deobf("curse.maven:mantle-74924:2264244"))
-    api(rfg.deobf("curse.maven:ubc-72744:2304497"))
     api(rfg.deobf("curse.maven:iguanatweaks-223248:2230545"))
 }
