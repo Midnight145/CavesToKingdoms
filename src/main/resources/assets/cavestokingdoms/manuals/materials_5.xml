@@ -110,7 +110,7 @@ By Ayumu Nagasawa</text>
    <title>Copper</title>
    <requires>discover.cavestokingdoms.copper</requires>
    <requiresIcon>TConstruct:materials:9</requiresIcon>
-   <text></text>
+   <text/>
    <armors>
       <armor>Metallurgy:metallurgy.copper.helmet</armor>
       <armor>Metallurgy:metallurgy.copper.chestplate</armor>
@@ -120,7 +120,7 @@ By Ayumu Nagasawa</text>
    <title>Bronze</title>
    <requires>discover.cavestokingdoms.bronze</requires>
    <requiresIcon>TConstruct:materials:13</requiresIcon>
-   <text></text>
+   <text/>
    <armors>
       <armor>Metallurgy:metallurgy.bronze.helmet</armor>
       <armor>Metallurgy:metallurgy.bronze.chestplate</armor>
@@ -133,7 +133,7 @@ By Ayumu Nagasawa</text>
    <title>Hepatizon</title>
    <requires>discover.cavestokingdoms.hepatizon</requires>
    <requiresIcon>Metallurgy:hepatizon.ingot</requiresIcon>
-   <text></text>
+   <text/>
    <armors>
       <armor>Metallurgy:metallurgy.hepatizon.helmet</armor>
       <armor>Metallurgy:metallurgy.hepatizon.chestplate</armor>
@@ -143,7 +143,7 @@ By Ayumu Nagasawa</text>
    <title>Damascus Steel</title>
    <requires>discover.cavestokingdoms.damascussteel</requires>
    <requiresIcon>Metallurgy:damascus.steel.ingot</requiresIcon>
-   <text></text>
+   <text/>
    <armors>
       <armor>Metallurgy:metallurgy.damascus.steel.helmet</armor>
       <armor>Metallurgy:metallurgy.damascus.steel.chestplate</armor>
@@ -156,7 +156,7 @@ By Ayumu Nagasawa</text>
       <title>Angmallen</title>
       <requires>discover.cavestokingdoms.angmallen</requires>
       <requiresIcon>Metallurgy:angmallen.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.angmallen.helmet</armor>
          <armor>Metallurgy:metallurgy.angmallen.chestplate</armor>
@@ -166,7 +166,7 @@ By Ayumu Nagasawa</text>
       <title>Steel</title>
       <requires>discover.cavestokingdoms.steel</requires>
       <requiresIcon>TConstruct:materials:16</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.steel.helmet</armor>
          <armor>Metallurgy:metallurgy.steel.chestplate</armor>
@@ -179,7 +179,7 @@ By Ayumu Nagasawa</text>
       <title>Eximite</title>
       <requires>discover.cavestokingdoms.eximite</requires>
       <requiresIcon>Metallurgy:eximite.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.eximite.helmet</armor>
          <armor>Metallurgy:metallurgy.eximite.chestplate</armor>
@@ -189,7 +189,7 @@ By Ayumu Nagasawa</text>
       <title>Desichalkos</title>
       <requires>discover.cavestokingdoms.desichalkos</requires>
       <requiresIcon>Metallurgy:desichalkos.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.desichalkos.helmet</armor>
          <armor>Metallurgy:metallurgy.desichalkos.chestplate</armor>
@@ -202,7 +202,7 @@ By Ayumu Nagasawa</text>
       <title>Prometheum</title>
       <requires>discover.cavestokingdoms.prometheum</requires>
       <requiresIcon>Metallurgy:prometheum.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.prometheum.helmet</armor>
          <armor>Metallurgy:metallurgy.prometheum.chestplate</armor>
@@ -212,7 +212,7 @@ By Ayumu Nagasawa</text>
       <title>Deep Iron</title>
       <requires>discover.cavestokingdoms.deepiron</requires>
       <requiresIcon>Metallurgy:deep.iron.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.deep.iron.helmet</armor>
          <armor>Metallurgy:metallurgy.deep.iron.chestplate</armor>
@@ -225,7 +225,7 @@ By Ayumu Nagasawa</text>
       <title>Black Steel</title>
       <requires>discover.cavestokingdoms.blacksteel</requires>
       <requiresIcon>Metallurgy:black.steel.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.black.steel.helmet</armor>
          <armor>Metallurgy:metallurgy.black.steel.chestplate</armor>
@@ -235,7 +235,7 @@ By Ayumu Nagasawa</text>
       <title>Oureclase</title>
       <requires>discover.cavestokingdoms.oureclase</requires>
       <requiresIcon>Metallurgy:oureclase.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.oureclase.helmet</armor>
          <armor>Metallurgy:metallurgy.oureclase.chestplate</armor>
@@ -248,7 +248,7 @@ By Ayumu Nagasawa</text>
       <title>Astral Silver</title>
       <requires>discover.cavestokingdoms.astralsilver</requires>
       <requiresIcon>Metallurgy:astral.silver.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.astral.silver.helmet</armor>
          <armor>Metallurgy:metallurgy.astral.silver.chestplate</armor>
@@ -258,7 +258,7 @@ By Ayumu Nagasawa</text>
       <title>Carmot</title>
       <requires>discover.cavestokingdoms.carmot</requires>
       <requiresIcon>Metallurgy:carmot.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.carmot.helmet</armor>
          <armor>Metallurgy:metallurgy.carmot.chestplate</armor>
@@ -271,7 +271,7 @@ By Ayumu Nagasawa</text>
       <title>Mithril</title>
       <requires>discover.cavestokingdoms.mithril</requires>
       <requiresIcon>ThermalFoundation:material:70</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.mithril.helmet</armor>
          <armor>Metallurgy:metallurgy.mithril.chestplate</armor>
@@ -281,7 +281,7 @@ By Ayumu Nagasawa</text>
       <title>Quicksilver</title>
       <requires>discover.cavestokingdoms.quicksilver</requires>
       <requiresIcon>Metallurgy:quicksilver.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.quicksilver.helmet</armor>
          <armor>Metallurgy:metallurgy.quicksilver.chestplate</armor>
@@ -294,7 +294,7 @@ By Ayumu Nagasawa</text>
       <title>Haderoth</title>
       <requires>discover.cavestokingdoms.haderoth</requires>
       <requiresIcon>Metallurgy:haderoth.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.haderoth.helmet</armor>
          <armor>Metallurgy:metallurgy.haderoth.chestplate</armor>
@@ -304,7 +304,7 @@ By Ayumu Nagasawa</text>
       <title>Orichalcum</title>
       <requires>discover.cavestokingdoms.orichalcum</requires>
       <requiresIcon>Metallurgy:orichalcum.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.orichalcum.helmet</armor>
          <armor>Metallurgy:metallurgy.orichalcum.chestplate</armor>
@@ -317,7 +317,7 @@ By Ayumu Nagasawa</text>
       <title>Celenegil</title>
       <requires>discover.cavestokingdoms.celenegil</requires>
       <requiresIcon>Metallurgy:celenegil.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.celenegil.helmet</armor>
          <armor>Metallurgy:metallurgy.celenegil.chestplate</armor>
@@ -327,7 +327,7 @@ By Ayumu Nagasawa</text>
       <title>Adamantine</title>
       <requires>discover.cavestokingdoms.adamantine</requires>
       <requiresIcon>Metallurgy:adamantine.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.adamantine.helmet</armor>
          <armor>Metallurgy:metallurgy.adamantine.chestplate</armor>
@@ -340,7 +340,7 @@ By Ayumu Nagasawa</text>
       <title>Atlarus</title>
       <requires>discover.cavestokingdoms.atlarus</requires>
       <requiresIcon>Metallurgy:atlarus.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.atlarus.helmet</armor>
          <armor>Metallurgy:metallurgy.atlarus.chestplate</armor>
@@ -350,7 +350,7 @@ By Ayumu Nagasawa</text>
       <title>Tartarite</title>
       <requires>discover.cavestokingdoms.tartarite</requires>
       <requiresIcon>Metallurgy:tartarite.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.tartarite.helmet</armor>
          <armor>Metallurgy:metallurgy.tartarite.chestplate</armor>
@@ -363,7 +363,7 @@ By Ayumu Nagasawa</text>
       <title>Shadow Steel</title>
       <requires>discover.cavestokingdoms.shadowsteel</requires>
       <requiresIcon>Metallurgy:shadow.steel.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.shadow.steel.helmet</armor>
          <armor>Metallurgy:metallurgy.shadow.steel.chestplate</armor>
@@ -373,7 +373,7 @@ By Ayumu Nagasawa</text>
       <title>Inolashite</title>
       <requires>discover.cavestokingdoms.inolashite</requires>
       <requiresIcon>Metallurgy:inolashite.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.inolashite.helmet</armor>
          <armor>Metallurgy:metallurgy.inolashite.chestplate</armor>
@@ -386,7 +386,7 @@ By Ayumu Nagasawa</text>
       <title>Amordrine</title>
       <requires>discover.cavestokingdoms.amordrine</requires>
       <requiresIcon>Metallurgy:amordrine.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.amordrine.helmet</armor>
          <armor>Metallurgy:metallurgy.amordrine.chestplate</armor>
@@ -396,7 +396,7 @@ By Ayumu Nagasawa</text>
       <title>Silver</title>
       <requires>discover.cavestokingdoms.silver</requires>
       <requiresIcon>ThermalFoundation:material:66</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.silver.helmet</armor>
          <armor>Metallurgy:metallurgy.silver.chestplate</armor>
@@ -409,7 +409,7 @@ By Ayumu Nagasawa</text>
       <title>Platinum</title>
       <requires>discover.cavestokingdoms.platinum</requires>
       <requiresIcon>ThermalFoundation:material:69</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.platinum.helmet</armor>
          <armor>Metallurgy:metallurgy.platinum.chestplate</armor>
@@ -419,7 +419,7 @@ By Ayumu Nagasawa</text>
       <title>Brass</title>
       <requires>discover.cavestokingdoms.brass</requires>
       <requiresIcon>Metallurgy:brass.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.brass.helmet</armor>
          <armor>Metallurgy:metallurgy.brass.chestplate</armor>
@@ -432,7 +432,7 @@ By Ayumu Nagasawa</text>
       <title>Electrum</title>
       <requires>discover.cavestokingdoms.electrum</requires>
       <requiresIcon>ThermalFoundation:material:71</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.electrum.helmet</armor>
          <armor>Metallurgy:metallurgy.electrum.chestplate</armor>
@@ -442,7 +442,7 @@ By Ayumu Nagasawa</text>
       <title>Ignatius</title>
       <requires>discover.cavestokingdoms.ignatius</requires>
       <requiresIcon>Metallurgy:ignatius.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.ignatius.helmet</armor>
          <armor>Metallurgy:metallurgy.ignatius.chestplate</armor>
@@ -455,7 +455,7 @@ By Ayumu Nagasawa</text>
       <title>Shadow Iron</title>
       <requires>discover.cavestokingdoms.shadowiron</requires>
       <requiresIcon>Metallurgy:shadow.iron.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.shadow.iron.helmet</armor>
          <armor>Metallurgy:metallurgy.shadow.iron.chestplate</armor>
@@ -465,7 +465,7 @@ By Ayumu Nagasawa</text>
       <title>Midasium</title>
       <requires>discover.cavestokingdoms.midasium</requires>
       <requiresIcon>Metallurgy:midasium.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.midasium.helmet</armor>
          <armor>Metallurgy:metallurgy.midasium.chestplate</armor>
@@ -478,7 +478,7 @@ By Ayumu Nagasawa</text>
       <title>Vyroxeres</title>
       <requires>discover.cavestokingdoms.vyroxeres</requires>
       <requiresIcon>Metallurgy:vyroxeres.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.vyroxeres.helmet</armor>
          <armor>Metallurgy:metallurgy.vyroxeres.chestplate</armor>
@@ -488,7 +488,7 @@ By Ayumu Nagasawa</text>
       <title>Ceruclase</title>
       <requires>discover.cavestokingdoms.ceruclase</requires>
       <requiresIcon>Metallurgy:ceruclase.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.ceruclase.helmet</armor>
          <armor>Metallurgy:metallurgy.ceruclase.chestplate</armor>
@@ -501,7 +501,7 @@ By Ayumu Nagasawa</text>
       <title>Kalendrite</title>
       <requires>discover.cavestokingdoms.kalendrite</requires>
       <requiresIcon>Metallurgy:kalendrite.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.kalendrite.helmet</armor>
          <armor>Metallurgy:metallurgy.kalendrite.chestplate</armor>
@@ -511,7 +511,7 @@ By Ayumu Nagasawa</text>
       <title>Vulcanite</title>
       <requires>discover.cavestokingdoms.vulcanite</requires>
       <requiresIcon>Metallurgy:vulcanite.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.vulcanite.helmet</armor>
          <armor>Metallurgy:metallurgy.vulcanite.chestplate</armor>
@@ -524,7 +524,7 @@ By Ayumu Nagasawa</text>
       <title>Sanguinite</title>
       <requires>discover.cavestokingdoms.sanguinite</requires>
       <requiresIcon>Metallurgy:sanguinite.ingot</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Metallurgy:metallurgy.sanguinite.helmet</armor>
          <armor>Metallurgy:metallurgy.sanguinite.chestplate</armor>
@@ -557,7 +557,7 @@ By Ayumu Nagasawa</text>
       <title>Thaumium</title>
       <requires>discover.cavestokingdoms.thaumium</requires>
       <requiresIcon>Thaumcraft:ItemResource:2</requiresIcon>
-      <text>Can be repaired by recharging it in an energetic infuser.</text>
+      <text>Same protection as Iron, but higher enchantibility.</text>
       <armors>
          <armor>Thaumcraft:ItemHelmetThaumium</armor>
          <armor>Thaumcraft:ItemChestplateThaumium</armor>
@@ -616,7 +616,7 @@ By Ayumu Nagasawa</text>
       <title>Invar</title>
       <requires>discover.cavestokingdoms.invar</requires>
       <requiresIcon>ThermalFoundation:material:72</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>ThermalFoundation:armor.helmetInvar</armor>
          <armor>ThermalFoundation:armor.plateInvar</armor>
@@ -626,7 +626,7 @@ By Ayumu Nagasawa</text>
       <title>Lead</title>
       <requires>discover.cavestokingdoms.lead</requires>
       <requiresIcon>ThermalFoundation:material:67</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>ThermalFoundation:armor.helmetLead</armor>
          <armor>ThermalFoundation:armor.plateLead</armor>
@@ -639,7 +639,7 @@ By Ayumu Nagasawa</text>
       <title>Nickel</title>
       <requires>discover.cavestokingdoms.nickel</requires>
       <requiresIcon>ThermalFoundation:material:72</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>ThermalFoundation:armor.helmetNickel</armor>
          <armor>ThermalFoundation:armor.plateNickel</armor>
@@ -649,7 +649,7 @@ By Ayumu Nagasawa</text>
       <title>Tin</title>
       <requires>discover.cavestokingdoms.tin</requires>
       <requiresIcon>ThermalFoundation:material:67</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>ThermalFoundation:armor.helmetTin</armor>
          <armor>ThermalFoundation:armor.plateTin</armor>
@@ -729,7 +729,7 @@ By Ayumu Nagasawa</text>
       <title>Robes</title>
       <requires>discover.cavestokingdoms.magiccloth</requires>
       <requiresIcon>Thaumcraft:ItemResource:7</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Thaumcraft:ItemHelmetRobe</armor>
          <armor>Thaumcraft:ItemChestplateRobe</armor>
@@ -739,7 +739,7 @@ By Ayumu Nagasawa</text>
       <title>Void Robes</title>
       <requires>discover.cavestokingdoms.voidmetal</requires>
       <requiresIcon>Thaumcraft:ItemResource:16</requiresIcon>
-      <text></text>
+      <text/>
       <armors>
          <armor>Thaumcraft:ItemHelmetVoidFortress</armor>
          <armor>Thaumcraft:ItemChestplateVoidFortress</armor>
