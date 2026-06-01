@@ -27,6 +27,15 @@ public class ItemManual extends ItemOreManual {
 
     private static final int NUMBER_OF_MANUALS = 15;
 
+    // used to determine which manuals should give back itself when crafted, used for AccessibleBooks.java
+    private static final int[] CONTAINER_INDICES = { 6, 7, 8, 9, 12, 13, 14 };
+    private static final boolean[] IS_CONTAINER_ITEM = new boolean[NUMBER_OF_MANUALS];
+    static {
+        for (int i : CONTAINER_INDICES) {
+            IS_CONTAINER_ITEM[i] = true;
+        }
+    }
+
     public ItemManual() {
         super();
         this.setUnlocalizedName(DEFS.MODID + ":" + this.name);
@@ -128,5 +137,14 @@ public class ItemManual extends ItemOreManual {
     public String getUnlocalizedName(ItemStack stack) {
         int meta = stack.getItemDamage();
         return this.getUnlocalizedName() + "." + meta;
+    }
+
+    public boolean hasContainerItem(ItemStack itemStack) {
+        return IS_CONTAINER_ITEM[itemStack.getItemDamage()];
+    }
+
+    @Override
+    public ItemStack getContainerItem(ItemStack itemStack) {
+        return hasContainerItem(itemStack) ? itemStack.copy() : null;
     }
 }

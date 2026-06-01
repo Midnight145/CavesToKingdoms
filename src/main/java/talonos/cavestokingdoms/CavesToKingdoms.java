@@ -35,6 +35,7 @@ public class CavesToKingdoms {
     public static void preInit(FMLPreInitializationEvent event) {
         CtKBlock.init();
         CtKItems.init();
+        AccessibleBooks.apply();
     }
 
     @Mod.EventHandler
